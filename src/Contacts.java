@@ -52,14 +52,19 @@ public class Contacts {
         System.out.println(Files.readAllLines(dataFile).get(i));
       }
     }
-    // public static String searchContact(String name) throws IOException{
+    public static void searchContact() throws IOException{
+        System.out.println("Enter the contact name");
+        String n = sc.nextLine(); 
 
-    //     for (int i=0;i<Files.readAllLines(dataFile).size();i++){
-    //         Files.readAllLines(dataFile).get(i);
-            
-    //     }
+        for (int i=0;i<Files.readAllLines(dataFile).size();i++){
+           String line =  Files.readAllLines(dataFile).get(i);
+           if (line.toUpperCase().contains(n.toUpperCase())){
+            System.out.println(line + " was found on line " + (i+1));
+           }
+            // System.out.println(line);
+        }
         
-    // }
+    }
     
 
 
@@ -73,7 +78,7 @@ public class Contacts {
             addContact();
                 break;
             case 3:
-            
+            searchContact();
                 break;
             case 4:
                 
